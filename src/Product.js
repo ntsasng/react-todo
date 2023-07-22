@@ -22,8 +22,6 @@ export default function Product() {
   const total = useMemo(() => {
     const result = products.reduce((result, prod) => {
       result = result + prod.price;
-      const localProduct = JSON.stringify(result);
-      localStorage.setItem("totals", localProduct);
       console.log("Tinh toan lai ...");
       return result;
     }, 0);
