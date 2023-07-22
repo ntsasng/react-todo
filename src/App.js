@@ -1,7 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import Content from "./Content";
+import { useCallback, useState } from "react";
+import Heading from "./Heading";
+import Product from "./Product";
 
 function App() {
+  const [show, setShow] = useState(false);
+  const [increase, setIncrease] = useState(0);
+  const handleIncrease = useCallback(() => {
+    setIncrease((prev) => prev + 1);
+  }, []);
   return (
     <div className="App">
       <header className="App-header">
@@ -17,6 +26,13 @@ function App() {
         >
           Learn React
         </a>
+        <button onClick={() => setShow(!show)} type="button">
+          Toggle
+        </button>
+        <Product />
+        <h1>{increase}</h1>
+        <Heading onIncrease={handleIncrease} />
+        {show && <Content />}
       </header>
     </div>
   );
