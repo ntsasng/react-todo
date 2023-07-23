@@ -4,6 +4,8 @@ import Content from "./Content";
 import { useCallback, useState } from "react";
 import Heading from "./Heading";
 import Product from "./Product";
+import UpDown from "./UpDown";
+import JobTodo from "./JobTodo";
 
 function App() {
   const [show, setShow] = useState(false);
@@ -26,13 +28,16 @@ function App() {
         >
           Learn React
         </a>
+        <JobTodo />
+        {/*
         <button onClick={() => setShow(!show)} type="button">
           Toggle
         </button>
+         <UpDown />
         <Product />
         <h1>{increase}</h1>
         <Heading onIncrease={handleIncrease} />
-        {show && <Content />}
+        {show && <Content />} */}
       </header>
     </div>
   );
